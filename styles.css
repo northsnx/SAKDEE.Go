@@ -8,18 +8,22 @@ body {
   margin: 0;
 }
 
+.container {
+  width: 100%;
+  max-width: 1700px;
+  margin: 0 auto;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
 /* ------------------------------
    Layout 3 คอลัมน์
 ------------------------------ */
 .main-content {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  flex-wrap: wrap;
   gap: 30px;
-  padding: 10px;
-  max-width: 1700px;
-  margin: 0 auto;
-  flex-wrap: wrap; /* รองรับจอเล็ก */
+  justify-content: space-between;
 }
 
 .left-panel,
@@ -29,28 +33,27 @@ body {
   padding: 20px;
   border-radius: 20px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  flex: 1;
+  min-width: 280px;
+  box-sizing: border-box;
 }
 
-/* ขนาดของแต่ละฝั่ง */
 .left-panel {
   flex: 2;
-  min-width: 500px;
   max-width: 600px;
 }
 
 .center-panel {
   flex: 1;
-  min-width:200px;
+  min-width: 300px;
 }
 
 .right-panel {
   flex: 1;
-  min-width: 300px;
   max-width: 400px;
   text-align: left;
 }
 
-/* ภาพโฆษณา */
 .ad-image {
   width: 100%;
   height: auto;
@@ -58,23 +61,22 @@ body {
   margin-top: 10px;
 }
 
-
 /* ------------------------------
    Header + Navigation
 ------------------------------ */
 header {
-  background-color: #459bec; /* สีพื้นหลังของ header */
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* เงาลอย */
+  background-color: #459bec;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   padding: 10px 0;
   position: sticky;
   top: 0;
   z-index: 100;
-  opacity: 1; /* เริ่มต้นโปร่งใส 0% = มองไม่เห็น */
+  opacity: 1;
 }
 
 header.fade-out {
-  opacity: 0; /* จางหาย */
-  pointer-events: none; /* ป้องกันการคลิกเมนูขณะจาง */
+  opacity: 0;
+  pointer-events: none;
 }
 
 .header-container {
@@ -85,7 +87,6 @@ header.fade-out {
   margin: 0 auto;
 }
 
-/* Logo Section */
 .logo {
   display: flex;
   align-items: center;
@@ -93,11 +94,8 @@ header.fade-out {
 
 .logo img {
   height: 60px;
-  /* width: 60px; */
 }
 
-
-/* Navigation */
 nav a {
   margin-left: 20px;
   text-decoration: none;
@@ -107,10 +105,11 @@ nav a {
   font-size: 1.5em;
 }
 
-nav a.active{
+nav a.active {
   color: #ffffff;
   font-weight: bold;
 }
+
 nav a:hover {
   color: #ff6600;
 }
@@ -210,9 +209,8 @@ select {
 }
 
 /* ------------------------------
-   Delete Selection
+   Buttons
 ------------------------------ */
-
 #clearButton {
   padding: 10px 20px;
   background-color: #f44336;
@@ -221,11 +219,10 @@ select {
   border-radius: 20px;
   cursor: pointer;
 }
+
 #clearButton:hover {
   background-color: #d32f2f;
 }
-
-
 
 #shareButton, #copyLinkButton {
   margin-top: 10px;
@@ -236,39 +233,46 @@ select {
   border-radius: 6px;
   cursor: pointer;
 }
+
 #shareButton:hover, #copyLinkButton:hover {
   background-color: #1976D2;
 }
 
-#ZoomButton {
+.zoom-button {
   padding: 10px 20px;
   background-color: #5754f5;
   color: white;
   border: none;
   border-radius: 20px;
   cursor: pointer;
+  margin: 5px 5px 0 0;
 }
-#ZoomButton:hover {
+
+.zoom-button:hover {
   background-color: #0003a7;
 }
 
-
+/* ------------------------------
+   Responsive Layout
+------------------------------ */
 @media (max-width: 768px) {
   .main-content {
-    display: flex !important;
-    flex-direction: column !important;
+    display: flex;
+    flex-direction: column; /* เรียงจากบนลงล่าง */
+    gap: 20px;
   }
 
   .left-panel,
   .center-panel,
   .right-panel {
-    flex: none !important;
     width: 100% !important;
     max-width: 100% !important;
     min-width: 0 !important;
+    padding: 15px;
+    box-sizing: border-box;
   }
 
-
+  /* อื่น ๆ สำหรับมือถือ */
   .header-container {
     flex-direction: column;
     text-align: center;
@@ -281,38 +285,28 @@ select {
     font-size: 1.2em;
   }
 
-  h1 {
-    font-size: 2rem;
-  }
-
   svg {
     width: 100%;
-  }
-
-  #visitedList {
-    max-width: 100%;
+    height: auto;
   }
 
   select {
     width: 100%;
+    margin-top: 10px;
   }
 
   #clearButton,
   #shareButton,
-  #copyLinkButton {
+  #copyLinkButton,
+  .zoom-button {
     width: 100%;
-    box-sizing: border-box;
+    margin-top: 10px;
+    font-size: 1rem;
+  }
+
+  .ad-image {
+    width: 100%;
+    height: auto;
     margin-top: 10px;
   }
-}
-
-.footer {
-  text-align: center;
-  padding: 1.5rem;
-  font-size: 1rem;
-  margin-top: 2rem;
-}
-
-.footer p {
-  margin: 0;
 }
