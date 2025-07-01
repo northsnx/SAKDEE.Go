@@ -239,3 +239,58 @@ select {
 #shareButton:hover, #copyLinkButton:hover {
   background-color: #1976D2;
 }
+
+
+@media (max-width: 768px) {
+  .main-content {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .left-panel,
+  .center-panel,
+  .right-panel {
+    flex: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+
+
+  .header-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  nav a {
+    display: inline-block;
+    margin: 10px;
+    font-size: 1.2em;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  svg {
+    width: 100%;
+  }
+
+  #visitedList {
+    max-width: 100%;
+  }
+
+  select {
+    width: 100%;
+  }
+
+  #clearButton,
+  #shareButton,
+  #copyLinkButton {
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 10px;
+  }
+}
+
