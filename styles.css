@@ -1,79 +1,25 @@
-/* ------------------------------
-   Global Layout
------------------------------- */
+/* ============================================
+   GLOBAL STYLES
+============================================ */
 body {
-  font-family: 'Kanit', sans-serif;
+  font-family: 'Segoe UI', sans-serif;
   text-align: center;
   background-color: #f9f9f9;
   margin: 0;
 }
 
-.container {
-  width: 100%;
-  max-width: 1700px;
-  margin: 0 auto;
-  padding: 10px;
-  box-sizing: border-box;
-}
-
-/* ------------------------------
-   Layout 3 คอลัมน์
------------------------------- */
-.main-content {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: space-between;
-}
-
-.left-panel,
-.center-panel,
-.right-panel {
-  background: #fff;
-  padding: 20px;
-  border-radius: 20px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-  flex: 1;
-  min-width: 280px;
-  box-sizing: border-box;
-}
-
-.left-panel {
-  flex: 2;
-  max-width: 600px;
-}
-
-.center-panel {
-  flex: 1;
-  min-width: 300px;
-}
-
-.right-panel {
-  flex: 1;
-  max-width: 400px;
-  text-align: left;
-}
-
-.ad-image {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  margin-top: 10px;
-}
-
-/* ------------------------------
-   Header + Navigation
------------------------------- */
+/* ============================================
+   HEADER + NAVIGATION
+============================================ */
 header {
   background-color: #459bec;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   padding: 10px 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: 1;
 }
-
 header.fade-out {
   opacity: 0;
   pointer-events: none;
@@ -87,57 +33,101 @@ header.fade-out {
   margin: 0 auto;
 }
 
+/* Logo */
 .logo {
   display: flex;
   align-items: center;
 }
-
 .logo img {
   height: 60px;
 }
 
+/* Navigation */
 nav a {
   margin-left: 20px;
-  text-decoration: none;
-  color: #ffffff;
-  font-weight: 500;
-  transition: color 0.3s;
   font-size: 1.5em;
+  font-weight: 500;
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s;
 }
-
-nav a.active {
-  color: #ffffff;
-  font-weight: bold;
-}
-
 nav a:hover {
   color: #ff6600;
 }
+nav a.active {
+  color: #fff;
+  font-weight: bold;
+}
 
-/* ------------------------------
-   Typography
------------------------------- */
+/* ============================================
+   TYPOGRAPHY
+============================================ */
 h1 {
   color: #459bec;
   font-size: 3rem;
   margin: 0;
 }
-
 p {
   color: #666;
   margin: 0;
 }
 
-/* ------------------------------
-   Map SVG
------------------------------- */
+/* ============================================
+   LAYOUT: MAIN CONTENT 3-COLUMN
+============================================ */
+.main-content {
+  display: flex;
+  justify-content: center; /* จัดกลางแนวนอน */
+  align-items: flex-start; /* จัดชิดบนแนวตั้ง */
+  flex-wrap: wrap;         /* รองรับหลายบรรทัด */
+  gap: 30px;
+  padding: 10px;
+  max-width: 1700px;
+  margin: 0 auto;          /* กึ่งกลาง container */
+}
+
+.left-panel,
+.center-panel,
+.right-panel {
+  background: #fff;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  flex: 1 1 300px; /* flex-grow:1, flex-shrink:1, flex-basis:300px */
+  min-width: 300px;
+  max-width: 600px;
+}
+
+.right-panel {
+  background: #fff;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  flex: 1 1 100px; /* flex-grow:1, flex-shrink:1, flex-basis:300px */
+  min-width: 280px;
+  
+}
+
+
+/* ============================================
+   AD IMAGE
+============================================ */
+.ad-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  margin-top: 10px;
+}
+
+/* ============================================
+   MAP SVG STYLES
+============================================ */
 svg {
   width: 80%;
   height: auto;
-  margin: 0px auto;
   display: block;
+  margin: 0 auto;
 }
-
 svg path {
   fill: #ccc;
   stroke: #fff;
@@ -145,18 +135,16 @@ svg path {
   cursor: pointer;
   transition: fill 0.3s;
 }
-
 svg path:hover {
   fill: #aaa;
 }
-
 svg path.visited {
   fill: #459bec;
 }
 
-/* ------------------------------
-   Dropdown Select
------------------------------- */
+/* ============================================
+   DROPDOWN
+============================================ */
 select {
   padding: 10px;
   font-size: 16px;
@@ -167,9 +155,9 @@ select {
   color: #333;
 }
 
-/* ------------------------------
-   Visited Provinces Box
------------------------------- */
+/* ============================================
+   VISITED PROVINCES LIST
+============================================ */
 #visitedList {
   margin: 20px auto;
   padding: 15px;
@@ -193,120 +181,143 @@ select {
   margin-top: 8px;
 }
 
-/* ------------------------------
-   Tooltip
------------------------------- */
+/* ============================================
+   TOOLTIP
+============================================ */
 .tooltip {
   position: absolute;
+  display: none;
   background: rgba(0, 0, 0, 0.75);
   color: #fff;
   padding: 5px 8px;
   border-radius: 20px;
-  pointer-events: none;
   font-size: 14px;
-  display: none;
+  pointer-events: none;
   z-index: 1000;
 }
 
-/* ------------------------------
-   Buttons
------------------------------- */
-#clearButton {
+/* ============================================
+   BUTTONS
+============================================ */
+button,
+#clearButton,
+#shareButton,
+#copyLinkButton,
+#ZoomButton {
   padding: 10px 20px;
-  background-color: #f44336;
-  color: white;
   border: none;
-  border-radius: 20px;
   cursor: pointer;
 }
 
+/* Clear Button */
+#clearButton {
+  background-color: #f44336;
+  color: #fff;
+  border-radius: 20px;
+}
 #clearButton:hover {
   background-color: #d32f2f;
 }
 
-#shareButton, #copyLinkButton {
-  margin-top: 10px;
-  padding: 10px 20px;
+/* Share & Copy Link */
+#shareButton,
+#copyLinkButton {
   background-color: #2196F3;
-  color: white;
-  border: none;
+  color: #fff;
   border-radius: 6px;
-  cursor: pointer;
+  margin-top: 10px;
 }
-
-#shareButton:hover, #copyLinkButton:hover {
+#shareButton:hover,
+#copyLinkButton:hover {
   background-color: #1976D2;
 }
 
-.zoom-button {
-  padding: 10px 20px;
+/* Zoom Button */
+.ZoomButton {
   background-color: #5754f5;
-  color: white;
-  border: none;
+  color: #fff;
   border-radius: 20px;
-  cursor: pointer;
-  margin: 5px 5px 0 0;
 }
-
-.zoom-button:hover {
+.ZoomButton:hover {
   background-color: #0003a7;
 }
 
-/* ------------------------------
-   Responsive Layout
------------------------------- */
-@media (max-width: 768px) {
+/* ============================================
+   FOOTER
+============================================ */
+.footer {
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 1rem;
+  margin-top: 2rem;
+}
+.footer p {
+  margin: 0;
+}
+
+
+/* ============================================
+   RESPONSIVE DESIGN: Mobile ≤ 720px
+============================================ */
+/* @media screen and (max-width: 720px) {
   .main-content {
-    display: flex;
-    flex-direction: column; /* เรียงจากบนลงล่าง */
+    flex-direction: column;
     gap: 20px;
+    padding: 10px;
+  }
+
+  .header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px 0;
+  }
+
+  .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .logo img {
+    height: 50px;
+    margin: 0 auto;
   }
 
   .left-panel,
   .center-panel,
   .right-panel {
-    width: 100% !important;
+    min-width: 100% !important;
     max-width: 100% !important;
-    min-width: 0 !important;
-    padding: 15px;
-    box-sizing: border-box;
+    padding: 0;
   }
 
-  /* อื่น ๆ สำหรับมือถือ */
-  .header-container {
-    flex-direction: column;
-    text-align: center;
-    gap: 10px;
+  h1 {
+    font-size: 2.2rem;
   }
 
   nav a {
-    display: inline-block;
-    margin: 10px;
     font-size: 1.2em;
+    margin-left: 10px;
   }
 
-  svg {
-    width: 100%;
-    height: auto;
-  }
-
-  select {
-    width: 100%;
-    margin-top: 10px;
-  }
-
-  #clearButton,
-  #shareButton,
-  #copyLinkButton,
-  .zoom-button {
-    width: 100%;
-    margin-top: 10px;
-    font-size: 1rem;
+  #visitedList {
+    max-width: 100%;
   }
 
   .ad-image {
-    width: 100%;
-    height: auto;
     margin-top: 10px;
   }
-}
+
+  button,
+  #clearButton,
+  #shareButton,
+  #copyLinkButton,
+  .ZoomButton {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+} */
+
