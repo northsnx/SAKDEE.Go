@@ -1,0 +1,241 @@
+/* ------------------------------
+   Global Layout
+------------------------------ */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+  background-color: #f9f9f9;
+  margin: 0;
+}
+
+/* ------------------------------
+   Layout 3 คอลัมน์
+------------------------------ */
+.main-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  padding: 30px;
+  max-width: 1700px;
+  margin: 0 auto;
+  flex-wrap: wrap; /* รองรับจอเล็ก */
+}
+
+.left-panel,
+.center-panel,
+.right-panel {
+  background: #fff;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* ขนาดของแต่ละฝั่ง */
+.left-panel {
+  flex: 1;
+  min-width: 400px;
+  max-width: 500px;
+}
+
+.center-panel {
+  flex: 2;
+  min-width: 400px;
+}
+
+.right-panel {
+  flex: 1;
+  min-width: 300px;
+  max-width: 400px;
+  text-align: left;
+}
+
+/* ภาพโฆษณา */
+.ad-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  margin-top: 10px;
+}
+
+
+/* ------------------------------
+   Header + Navigation
+------------------------------ */
+header {
+  background-color: #459bec; /* สีพื้นหลังของ header */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* เงาลอย */
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  opacity: 1; /* เริ่มต้นโปร่งใส 0% = มองไม่เห็น */
+}
+
+header.fade-out {
+  opacity: 0; /* จางหาย */
+  pointer-events: none; /* ป้องกันการคลิกเมนูขณะจาง */
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1700px;
+  margin: 0 auto;
+}
+
+/* Logo Section */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 60px;
+  /* width: 60px; */
+}
+
+
+/* Navigation */
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 500;
+  transition: color 0.3s;
+  font-size: 1.5em;
+}
+
+nav a.active{
+  color: #ffffff;
+  font-weight: bold;
+}
+nav a:hover {
+  color: #ff6600;
+}
+
+/* ------------------------------
+   Typography
+------------------------------ */
+h1 {
+  color: #459bec;
+  font-size: 3rem;
+  margin: 0;
+}
+
+p {
+  color: #666;
+  margin: 0;
+}
+
+/* ------------------------------
+   Map SVG
+------------------------------ */
+svg {
+  width: 80%;
+  height: auto;
+  margin: 0px auto;
+  display: block;
+}
+
+svg path {
+  fill: #ccc;
+  stroke: #fff;
+  stroke-width: 1;
+  cursor: pointer;
+  transition: fill 0.3s;
+}
+
+svg path:hover {
+  fill: #aaa;
+}
+
+svg path.visited {
+  fill: #459bec;
+}
+
+/* ------------------------------
+   Dropdown Select
+------------------------------ */
+select {
+  padding: 10px;
+  font-size: 16px;
+  margin-top: 20px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  color: #333;
+}
+
+/* ------------------------------
+   Visited Provinces Box
+------------------------------ */
+#visitedList {
+  margin: 20px auto;
+  padding: 15px;
+  max-width: 400px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  text-align: left;
+}
+
+#visitedList strong {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #444;
+}
+
+#visitedProvincesList {
+  padding-left: 20px;
+  margin-top: 8px;
+}
+
+/* ------------------------------
+   Tooltip
+------------------------------ */
+.tooltip {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  padding: 5px 8px;
+  border-radius: 20px;
+  pointer-events: none;
+  font-size: 14px;
+  display: none;
+  z-index: 1000;
+}
+
+/* ------------------------------
+   Delete Selection
+------------------------------ */
+
+#clearButton {
+  padding: 10px 20px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+#clearButton:hover {
+  background-color: #d32f2f;
+}
+
+
+
+#shareButton, #copyLinkButton {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+#shareButton:hover, #copyLinkButton:hover {
+  background-color: #1976D2;
+}
