@@ -2,7 +2,7 @@
    Global Layout
 ------------------------------ */
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Kanit', sans-serif;
   text-align: center;
   background-color: #f9f9f9;
   margin: 0;
@@ -16,7 +16,7 @@ body {
   justify-content: space-between;
   align-items: flex-start;
   gap: 30px;
-  padding: 30px;
+  padding: 10px;
   max-width: 1700px;
   margin: 0 auto;
   flex-wrap: wrap; /* รองรับจอเล็ก */
@@ -33,14 +33,14 @@ body {
 
 /* ขนาดของแต่ละฝั่ง */
 .left-panel {
-  flex: 1;
-  min-width: 400px;
-  max-width: 500px;
+  flex: 2;
+  min-width: 500px;
+  max-width: 600px;
 }
 
 .center-panel {
-  flex: 2;
-  min-width: 400px;
+  flex: 1;
+  min-width:200px;
 }
 
 .right-panel {
@@ -65,7 +65,7 @@ body {
 header {
   background-color: #459bec; /* สีพื้นหลังของ header */
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* เงาลอย */
-  padding: 20px 0;
+  padding: 10px 0;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -240,6 +240,18 @@ select {
   background-color: #1976D2;
 }
 
+#ZoomButton {
+  padding: 10px 20px;
+  background-color: #5754f5;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+#ZoomButton:hover {
+  background-color: #0003a7;
+}
+
 
 @media (max-width: 768px) {
   .main-content {
@@ -294,3 +306,13 @@ select {
   }
 }
 
+.footer {
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 1rem;
+  margin-top: 2rem;
+}
+
+.footer p {
+  margin: 0;
+}
