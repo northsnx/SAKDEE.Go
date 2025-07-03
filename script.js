@@ -280,21 +280,21 @@ document.getElementById("exportCustomImage").addEventListener("click", () => {
 
         // 2. หัวข้อ
         ctx.fillStyle = "#459bec";
-        ctx.font = "bold 60px 'Kanit'";
+        ctx.font = "bold 60px 'IBM Plex Sans Thai'";
         ctx.fillText("SAKDEE Go+", padding + 20, 100);
 
         ctx.fillStyle = "#000000FF";
-        ctx.font = "32px 'Kanit'";
+        ctx.font = "32px 'IBM Plex Sans Thai'";
         ctx.fillText("คุณเคยไปจังหวัดไหนมาแล้วบ้าง", padding + 20, 150);
 
         // 3. จำนวนจังหวัด
         ctx.fillStyle = "#444";
-        ctx.font = "20px 'Kanit'";
+        ctx.font = "20px 'IBM Plex Sans Thai'";
         ctx.fillText(countText, padding + 40, 190);
 
         // 4. รายชื่อจังหวัด
         ctx.fillStyle = "#AFAFAFFF";
-        ctx.font = "18px 'Kanit'";
+        ctx.font = "18px 'IBM Plex Sans Thai'";
 
 // รวมชื่อทั้งหมดเป็นข้อความเดียว
 const names = Array.from(visitedItems).map(li =>
